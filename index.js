@@ -45,7 +45,10 @@ app.get("/pagar", async (req, res) => {
 
 app.post("/not", (req, res) => {
     var id = req.query.id;
-    console.log(req.query);
+    if (id == undefined) {
+        var id = req.query.data.id;
+    }
+    //console.log(req.query);
     setTimeout(() => {
         var filtro = {
             "order.id": id
