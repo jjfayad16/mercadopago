@@ -53,7 +53,7 @@ app.post("/not", (req, res) => {
         MercadoPago.payment.search({
             qs: filtro
         }).then(data => {
-            console.data(data);
+            console.log(data);
         }).catch(err => {
             console.log(err);
         })
