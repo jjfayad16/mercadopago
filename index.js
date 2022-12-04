@@ -45,8 +45,9 @@ app.get("/pagar", async (req, res) => {
 
 app.post("/not", (req, res) => {
     var id = req.query.id;
-    if (id == undefined) {
-        id = req.query.data.id;
+    if (req.query.data != undefined) {
+        var test = req.query.data;
+        console.log(test);
     }
     //console.log(req.query);
     setTimeout(() => {
@@ -58,7 +59,8 @@ app.post("/not", (req, res) => {
         }).then(data => {
             var pagamento = data.body.results[0];
             if (pagamento != undefined) {
-                console.log(pagamento);
+                console.log(pagamento.external_reference);
+                console.log(pagamento.status);
             } else {
                 console.log("Pagamento não encontrado");
             }
