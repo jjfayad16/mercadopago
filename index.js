@@ -46,7 +46,7 @@ app.get("/pagar", async (req, res) => {
 app.post("/not", (req, res) => {
     var id = req.query.id;
     if (id == undefined) {
-        var id = req.query.data.id;
+        id = req.query.data.id;
     }
     //console.log(req.query);
     setTimeout(() => {
